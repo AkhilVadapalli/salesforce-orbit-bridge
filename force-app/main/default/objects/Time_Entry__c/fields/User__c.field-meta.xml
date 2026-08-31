@@ -4,7 +4,7 @@
     <label>User</label>
     <type>Lookup</type>
     <referenceTo>User</referenceTo>
-    <relationshipLabel>User</relationshipLabel>
-    <relationshipName>User__r</relationshipName>
+    <relationshipLabel>Time Entries</relationshipLabel>
+    <relationshipName>TimeEntries</relationshipName>
     <required>true</required>
 </CustomField>

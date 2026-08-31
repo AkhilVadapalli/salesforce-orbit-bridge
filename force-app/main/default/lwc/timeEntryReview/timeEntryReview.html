@@ -1,20 +1,22 @@
 <template>
-    <lightning-card title="My Time Entries">
+    <lightning-card title="All Submitted Time Entries">
         <div class="slds-p-around_medium">
             <template if:true={entries}>
                 <template for:each={entries} for:item="entry">
                     <div key={entry.Id} class="slds-box slds-m-bottom_small">
                         <div class="slds-grid slds-grid_align-spread">
                             <div>
-                                <strong>{entry.Date__c}</strong>
-                                <div>{entry.Hours__c} hours</div>
+                                <strong>{entry.displayName}</strong>
+                                <div>{entry.Date__c}</div>
+                                <div>{entry.Start_Time__c} to {entry.End_Time__c}</div>
+                                <div>{entry.calculatedHours} hours</div>
                             </div>
                             <div>
-                                <template if:true={entry.Approved__c}>
-                                    <lightning-badge label="Approved" variant="outline-brand"></lightning-badge>
+                                <template if:true={entry.isApproved}>
+                                    <lightning-badge label="Approved"></lightning-badge>
                                 </template>
-                                <template if:false={entry.Approved__c}>
-                                    <lightning-button label="Approve" variant="brand" data-id={entry.Id} onclick={approve}></lightning-button>
+                                <template if:false={entry.isApproved}>
+                                    <lightning-button label="Approve" variant="brand" data-id={entry.Id} onclick={handleApprove}></lightning-button>
                                 </template>
                             </div>
                         </div>

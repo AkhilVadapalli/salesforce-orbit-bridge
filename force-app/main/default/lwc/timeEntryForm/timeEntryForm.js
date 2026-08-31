@@ -1,11 +1,12 @@
 import { LightningElement, track } from 'lwc';
 import { createRecord } from 'lightning/uiRecordApi';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
+import userId from '@salesforce/user/Id';
 
 const OBJ_API_NAME = 'Time_Entry__c';
 
 export default class TimeEntryForm extends LightningElement {
-    @track date = '';
+    @track date = new Date().toISOString().slice(0,10);
     @track startTime = '';
     @track endTime = '';
     @track breakMinutes = 0;
@@ -36,14 +37,15 @@ export default class TimeEntryForm extends LightningElement {
             'Start_Time__c': this.startTime,
             'End_Time__c': this.endTime,
             'Break_Minutes__c': this.breakMinutes,
-            'Hours__c': hours
+            'Hours__c': hours,
+            'User__c': userId
         };
         const recordInput = { apiName: OBJ_API_NAME, fields };
         try {
             const result = await createRecord(recordInput);
             this.dispatchEvent(new ShowToastEvent({ title: 'Saved', message: 'Time entry saved', variant: 'success' }));
             // reset form
-            this.date = '';
+            this.date = new Date().toISOString().slice(0,10);
             this.startTime = '';
             this.endTime = '';
             this.breakMinutes = 0;

@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="My Time Entries">
+        <div class="slds-p-around_medium">
+            <template if:true={entries}>
+                <template for:each={entries} for:item="entry">
+                    <div key={entry.Id} class="slds-box slds-m-bottom_small">
+                        <div class="slds-grid slds-grid_align-spread">
+                            <div>
+                                <strong>{entry.Date__c}</strong>
+                                <div>{entry.Hours__c} hours</div>
+                            </div>
+                            <div>
+                                <template if:true={entry.Approved__c}>
+                                    <lightning-badge label="Approved" variant="outline-brand"></lightning-badge>
+                                </template>
+                                <template if:false={entry.Approved__c}>
+                                    <lightning-button label="Approve" variant="brand" data-id={entry.Id} onclick={approve}></lightning-button>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </template>
+            <template if:false={entries}>
+                <div>No entries found.</div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

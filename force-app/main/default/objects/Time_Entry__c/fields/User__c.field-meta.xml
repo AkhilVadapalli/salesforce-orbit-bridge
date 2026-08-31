@@ -6,5 +6,6 @@
     <referenceTo>User</referenceTo>
     <relationshipLabel>Time Entries</relationshipLabel>
     <relationshipName>TimeEntries</relationshipName>
+    <deleteConstraint>Restrict</deleteConstraint>
     <required>true</required>
 </CustomField>

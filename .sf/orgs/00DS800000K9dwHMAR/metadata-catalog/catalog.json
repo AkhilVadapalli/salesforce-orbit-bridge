@@ -1,0 +1,39 @@
+{
+  "version": 2,
+  "orgId": "00DS800000K9dwHMAR",
+  "writtenAt": "2026-08-31T18:56:59.685Z",
+  "generation": 55,
+  "inventory": [],
+  "sobjects": {
+    "descriptions": []
+  },
+  "tracking": [
+    {
+      "xmlName": "AppMenu",
+      "fullName": "AppSwitcher",
+      "signature": "add\u0000[20,\"2026-08-29T04:29:03.000+0000\",\"AppMenu#AppSwitcher\",false,false]"
+    },
+    {
+      "xmlName": "Flow",
+      "fullName": "sfdc_default_ReportExport_Protection_Flow",
+      "signature": "modify\u0000[18,\"2026-08-29T04:28:56.000+0000\",\"301S800001IVDXZIA5\",false,true]"
+    },
+    {
+      "xmlName": "PermissionSet",
+      "fullName": "sfdcInternalInt__sfdc_scrt2",
+      "signature": "modify\u0000[23,\"2026-08-29T04:29:05.000+0000\",\"0PSS800000AiuaDOAR\",false,true]"
+    },
+    {
+      "xmlName": "Settings",
+      "fullName": "RealTimeEvent",
+      "signature": "add\u0000[21,\"2026-08-29T04:29:04.000+0000\",\"0aBS8000000LmpdMAC\",false,false]"
+    },
+    {
+      "xmlName": "TransactionSecurityPolicy",
+      "fullName": "sfdc_default_ReportExport_Protection",
+      "signature": "modify\u0000[24,\"2026-08-29T10:02:00.000+0000\",\"0NIS8000001U8pBOAS\",false,true]"
+    }
+  ],
+  "metadataTypes": [],
+  "metadataListings": []
+}

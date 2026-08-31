@@ -1,0 +1,42 @@
+<template>
+    <lightning-card title="AI Case Triage" icon-name="utility:magicwand">
+        <div class="slds-p-around_medium">
+            <template if:true={hasSuggestions}>
+                <div class="slds-grid slds-wrap slds-gutters">
+                    <template for:each={suggestions} for:item="item">
+                        <div key={item.suggestionType} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-p-bottom_small">
+                            <article class="slds-card slds-card_boundary suggestion-card">
+                                <div class="slds-card__header slds-grid slds-grid_align-spread">
+                                    <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                        <div class="slds-media__figure">
+                                            <lightning-icon icon-name="utility:lightning_extension" size="small"></lightning-icon>
+                                        </div>
+                                        <div class="slds-media__body">
+                                            <h2 class="slds-card__header-title">{item.suggestionType}</h2>
+                                        </div>
+                                    </header>
+                                    <span class="slds-badge slds-badge_lightest">{item.priority}</span>
+                                </div>
+                                <div class="slds-card__body slds-card__body_inner">
+                                    <p>{item.summary}</p>
+                                    <div class="slds-m-top_x-small">
+                                        <strong>Queue:</strong> {item.routingQueue}
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </template>
+                </div>
+            </template>
+
+            <template if:false={hasSuggestions}>
+                <div class="slds-text-color_weak">No triage suggestions available for this case.</div>
+            </template>
+
+            <div class="slds-m-top_medium slds-grid slds-grid_align-spread">
+                <lightning-button label="Review Case" variant="neutral"></lightning-button>
+                <lightning-button label="Escalate" variant="brand"></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

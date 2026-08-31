@@ -1,0 +1,66 @@
+{
+    "fileVersion": 0,
+    "serverMaxRevisionCounter": 100,
+    "sourceMembers": {
+        "Profile__Admin": {
+            "memberType": "Profile",
+            "serverRevisionCounter": 1,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "ApexClass__CaseTriageAdvisorService": {
+            "memberType": "ApexClass",
+            "serverRevisionCounter": 2,
+            "lastRetrievedFromServer": 2,
+            "isNameObsolete": false
+        },
+        "LightningComponentBundle__caseTriagePanel": {
+            "memberType": "LightningComponentBundle",
+            "serverRevisionCounter": 96,
+            "lastRetrievedFromServer": 96,
+            "isNameObsolete": false
+        },
+        "LightningComponentResource__caseTriagePanel/caseTriagePanel.js": {
+            "memberType": "LightningComponentResource",
+            "serverRevisionCounter": 97,
+            "lastRetrievedFromServer": 97,
+            "isNameObsolete": false
+        },
+        "LightningComponentResource__caseTriagePanel/caseTriagePanel.css": {
+            "memberType": "LightningComponentResource",
+            "serverRevisionCounter": 98,
+            "lastRetrievedFromServer": 98,
+            "isNameObsolete": false
+        },
+        "LightningComponentResource__caseTriagePanel/caseTriagePanel.html": {
+            "memberType": "LightningComponentResource",
+            "serverRevisionCounter": 99,
+            "lastRetrievedFromServer": 99,
+            "isNameObsolete": false
+        },
+        "LightningComponentResource__caseTriagePanel/caseTriagePanel.js-meta.xml": {
+            "memberType": "LightningComponentResource",
+            "serverRevisionCounter": 100,
+            "lastRetrievedFromServer": 100,
+            "isNameObsolete": false
+        },
+        "FlexiPage__Case_Record_Page": {
+            "memberType": "FlexiPage",
+            "serverRevisionCounter": 50,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomObject__Case": {
+            "memberType": "CustomObject",
+            "serverRevisionCounter": 94,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "FlexiPage__Case_Record_Page1": {
+            "memberType": "FlexiPage",
+            "serverRevisionCounter": 95,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        }
+    }
+}

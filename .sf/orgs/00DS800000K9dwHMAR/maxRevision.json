@@ -1,0 +1,42 @@
+{
+    "fileVersion": 0,
+    "serverMaxRevisionCounter": 24,
+    "sourceMembers": {
+        "Settings__RealTimeEvent": {
+            "memberType": "Settings",
+            "serverRevisionCounter": 21,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "GenOpAgentConfig__sfdc_default_ReportExport_Protection_Flow": {
+            "memberType": "GenOpAgentConfig",
+            "serverRevisionCounter": 3,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "Flow__sfdc_default_ReportExport_Protection_Flow": {
+            "memberType": "Flow",
+            "serverRevisionCounter": 18,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "TransactionSecurityPolicy__sfdc_default_ReportExport_Protection": {
+            "memberType": "TransactionSecurityPolicy",
+            "serverRevisionCounter": 24,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "PermissionSet__sfdcInternalInt__sfdc_scrt2": {
+            "memberType": "PermissionSet",
+            "serverRevisionCounter": 23,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "AppMenu__AppSwitcher": {
+            "memberType": "AppMenu",
+            "serverRevisionCounter": 20,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        }
+    }
+}

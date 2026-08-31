@@ -1,0 +1,18 @@
+:host {
+    display: block;
+}
+
+.suggestion-card {
+    min-height: 150px;
+    border-radius: 0.5rem;
+    background: #f8fbff;
+}
+
+.slds-card__header-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.slds-badge {
+    align-self: center;
+}

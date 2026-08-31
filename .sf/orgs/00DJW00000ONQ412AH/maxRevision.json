@@ -1,0 +1,24 @@
+{
+    "fileVersion": 0,
+    "serverMaxRevisionCounter": 4,
+    "sourceMembers": {
+        "Profile__Admin": {
+            "memberType": "Profile",
+            "serverRevisionCounter": 2,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "ApexClass__HelloSalesforceService": {
+            "memberType": "ApexClass",
+            "serverRevisionCounter": 3,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "ApexClass__HelloSalesforceServiceTest": {
+            "memberType": "ApexClass",
+            "serverRevisionCounter": 4,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        }
+    }
+}

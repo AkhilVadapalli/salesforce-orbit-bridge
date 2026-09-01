@@ -1,6 +1,9 @@
 <template>
     <lightning-card title="My Time Entry">
         <div class="slds-p-around_medium">
+            <template if:false={hasSubmitAccess}>
+                <div class="slds-text-color_error slds-m-bottom_small">You do not have access to submit entries.</div>
+            </template>
             <lightning-combobox
                 name="employee"
                 label="Employee"

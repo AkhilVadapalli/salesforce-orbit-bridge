@@ -3,6 +3,7 @@ import { wire } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import getEmployeeOptions from '@salesforce/apex/TimeEntryController.getEmployeeOptions';
 import createTimeEntry from '@salesforce/apex/TimeEntryController.createTimeEntry';
+import canSubmitTimeEntries from '@salesforce/customPermission/Submit_Time_Entries';
 
 export default class TimeEntryForm extends LightningElement {
     @track employeeId = '';
@@ -27,6 +28,10 @@ export default class TimeEntryForm extends LightningElement {
     handleEndChange(e) { this.endTime = e.target.value; }
     handleBreakChange(e) { this.breakMinutes = e.target.value || 0; }
 
+    get hasSubmitAccess() {
+        return canSubmitTimeEntries;
+    }
+
     computeHours() {
         if (!this.date || !this.startTime || !this.endTime) return 0;
         const start = new Date(`${this.date}T${this.startTime}`);
@@ -44,6 +49,11 @@ export default class TimeEntryForm extends LightningElement {
     }
 
     async saveEntry() {
+        if (!this.hasSubmitAccess) {
+            this.dispatchEvent(new ShowToastEvent({ title: 'No Access', message: 'You do not have permission to submit time entries.', variant: 'error' }));
+            return;
+        }
+
         try {
             await createTimeEntry({
                 employeeId: this.employeeId,

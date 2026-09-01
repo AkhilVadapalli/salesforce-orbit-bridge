@@ -1,17 +1,27 @@
 import { LightningElement, track } from 'lwc';
-import { createRecord } from 'lightning/uiRecordApi';
+import { wire } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
-
-const OBJ_API_NAME = 'Time_Entry__c';
+import getEmployeeOptions from '@salesforce/apex/TimeEntryController.getEmployeeOptions';
+import createTimeEntry from '@salesforce/apex/TimeEntryController.createTimeEntry';
 
 export default class TimeEntryForm extends LightningElement {
-    @track employeeName = '';
+    @track employeeId = '';
+    @track employeeOptions = [];
     @track date = new Date().toISOString().slice(0,10);
     @track startTime = '';
     @track endTime = '';
     @track breakMinutes = 0;
 
-    handleNameChange(e) { this.employeeName = e.target.value; }
+    @wire(getEmployeeOptions)
+    wiredEmployees({ data, error }) {
+        if (data) {
+            this.employeeOptions = data;
+        } else if (error) {
+            this.employeeOptions = [];
+        }
+    }
+
+    handleEmployeeChange(e) { this.employeeId = e.target.value; }
     handleDateChange(e) { this.date = e.target.value; }
     handleStartChange(e) { this.startTime = e.target.value; }
     handleEndChange(e) { this.endTime = e.target.value; }
@@ -34,17 +44,15 @@ export default class TimeEntryForm extends LightningElement {
     }
 
     async saveEntry() {
-        const fields = {
-            'Name': this.employeeName,
-            'Date__c': this.date,
-            'Start_Time__c': this.startTime,
-            'End_Time__c': this.endTime
-        };
-        const recordInput = { apiName: OBJ_API_NAME, fields };
         try {
-            await createRecord(recordInput);
+            await createTimeEntry({
+                employeeId: this.employeeId,
+                entryDate: this.date,
+                startTime: this.startTime,
+                endTime: this.endTime
+            });
             this.dispatchEvent(new ShowToastEvent({ title: 'Saved', message: 'Time entry saved', variant: 'success' }));
-            this.employeeName = '';
+            this.employeeId = '';
             this.date = new Date().toISOString().slice(0,10);
             this.startTime = '';
             this.endTime = '';

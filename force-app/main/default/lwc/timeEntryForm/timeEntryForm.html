@@ -1,13 +1,20 @@
 <template>
     <lightning-card title="My Time Entry">
         <div class="slds-p-around_medium">
-            <lightning-input type="text" label="Employee Name" value={employeeName} onchange={handleNameChange} required></lightning-input>
+            <lightning-combobox
+                name="employee"
+                label="Employee"
+                value={employeeId}
+                options={employeeOptions}
+                onchange={handleEmployeeChange}
+                placeholder="Select employee"
+                required>
+            </lightning-combobox>
             <lightning-input type="date" label="Date" value={date} onchange={handleDateChange}></lightning-input>
             <lightning-input type="time" label="Start Time" value={startTime} onchange={handleStartChange}></lightning-input>
             <lightning-input type="time" label="End Time" value={endTime} onchange={handleEndChange}></lightning-input>
             <lightning-input type="number" label="Break Minutes" value={breakMinutes} onchange={handleBreakChange} min="0"></lightning-input>
             <p class="slds-m-top_small">Calculated hours: {calculatedHours}</p>
-            <p class="slds-text-color_weak slds-text-body_small">Break minutes can be 0. For now they are used only in the on-screen calculation while the org metadata catches up.</p>
             <div class="slds-m-top_medium">
                 <lightning-button variant="brand" label="Save Entry" onclick={saveEntry}></lightning-button>
             </div>
